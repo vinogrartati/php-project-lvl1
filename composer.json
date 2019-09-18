@@ -9,6 +9,6 @@
     ],
     "require": {},
     "bin": [
-    	"./brain-games"
+    	"bin/brain-games"
     ]
 }
