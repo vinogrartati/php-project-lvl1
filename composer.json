@@ -1,0 +1,14 @@
+{
+    "name": "vinogradova/php-project-lvl1",
+    "description": "First php project - Brain games",
+    "authors": [
+        {
+            "name": "Vinogradova Tatiana",
+            "email": "vinogradova@vl.ru"
+        }
+    ],
+    "require": {},
+    "bin": [
+    	"./brain-games"
+    ]
+}
