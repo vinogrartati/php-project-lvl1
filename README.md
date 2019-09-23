@@ -2,3 +2,5 @@
 [![asciicast](https://asciinema.org/a/269767.png)](https://asciinema.org/a/269767)
 
 [![asciicast](https://asciinema.org/a/269769.png)](https://asciinema.org/a/269769)
+
+[![asciicast](https://asciinema.org/a/270392.png)](https://asciinema.org/a/270392)
