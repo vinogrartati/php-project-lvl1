@@ -8,7 +8,6 @@
         }
     ],
     "bin": [
-        "bin/brain-games",
    	"bin/brain-even",
 	"bin/brain-calc"
     ],
@@ -18,10 +17,11 @@
     "autoload" : {
     	"files": [
 		"src/games/YesNoGame.php",
-		"src/games/CalculationGame.php"
+		"src/games/CalculationGame.php",
+		"src/BaseForGames.php"
 	],
 	"psr-4": {
-		"BrainGames\\": "src/games"
+		"BrainGames\\": "src"
 	}
     },
      "require": {

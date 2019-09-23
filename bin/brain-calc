@@ -8,4 +8,6 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
-BrainGames\CalculationGame\game();
+
+use BrainGames\BaseForGames\game;
+BrainGames\Games\CalculationGame\calculate();

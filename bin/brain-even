@@ -9,5 +9,5 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
-BrainGames\YesNoGame\game();
-
+use BrainGames\BaseForGames\game;
+BrainGames\Games\YesNoGame\yesOrNo();
