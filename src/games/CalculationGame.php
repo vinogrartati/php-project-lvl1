@@ -14,18 +14,18 @@ function calculate()
         function () {
             $value1 = rand(0, 100);
             $value2 = rand(0, 100);
-            $array = ["{$value1} * {$value2}", "{$value1} + {$value2}", "{$value1} - {$value2}"];
-            $key = array_rand($array, 1);
-            return $array[$key];
+            $choiceExpression = ["{$value1} * {$value2}", "{$value1} + {$value2}", "{$value1} - {$value2}"];
+            $randomKey = array_rand($choiceExpression, 1);
+            return $choiceExpression[$randomKey];
         },
         function ($question) {
-            $array = explode(" ", $question);
-            if ($array[1] == "*") {
-                return $array[0] * $array[2];
-            } elseif ($array[1] == "+") {
-                return $array[0] + $array[2];
+            $questionValues = explode(" ", $question);
+            if ($questionValues[1] == "*") {
+                return $questionValues[0] * $questionValues[2];
+            } elseif ($questionValues[1] == "+") {
+                return $questionValues[0] + $questionValues[2];
             } else {
-                return $array[0] - $array[2];
+                return $questionValues[0] - $questionValues[2];
             }
         }
     );

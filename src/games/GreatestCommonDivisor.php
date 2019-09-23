@@ -15,9 +15,9 @@ function gcd()
             $value2 = rand(0, 100);
             return "$value1 $value2";
         },
-        function ($string) {
-            $array = explode(" ", $string);
-            return gmp_gcd($array[0], $array[1]);
+        function ($question) {
+            $questionValues = explode(" ", $question);
+            return gmp_gcd($questionValues[0], $questionValues[1]);
         }
     );
 }

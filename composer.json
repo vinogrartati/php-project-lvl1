@@ -10,7 +10,8 @@
     "bin": [
    	"bin/brain-even",
 	"bin/brain-calc",
-	"bin/brain-gcd"
+	"bin/brain-gcd",
+	"bin/brain-progressive"
     ],
     "scripts": {
     	"phpcs": "phpcs"
@@ -20,7 +21,8 @@
 		"src/BaseForGames.php",
 		"src/games/YesNoGame.php",
 		"src/games/CalculationGame.php",
-		"src/games/GreatestCommonDivisor.php"
+		"src/games/GreatestCommonDivisor.php",
+		"src/games/ProgressionGame.php"
 	],
 	"psr-4": {
 		"BrainGames\\": "src"

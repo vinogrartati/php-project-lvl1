@@ -5,7 +5,7 @@ namespace BrainGames\BaseForGames;
 use function \cli\line;
 use function \cli\prompt;
 
-function game($instruction, $questionCreate, $answer)
+function game($instruction, $questionCreate, $answerCreate)
 {
     $question = [];
     line('Welcome to the Brain Game!');
@@ -16,7 +16,7 @@ function game($instruction, $questionCreate, $answer)
     line('');
     for ($i = 0; $i < 3; $i++) {
             $question[$i] = $questionCreate();
-            $correctAnswer = $answer($question[$i]);
+            $correctAnswer = $answerCreate($question[$i]);
             line('Question:%s', $question[$i]);
             $playerAnswer = prompt('Your answer');
         if ($correctAnswer == $playerAnswer) {
