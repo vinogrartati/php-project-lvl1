@@ -14,9 +14,9 @@ function calculate()
         function () {
             $firstValueForExpression = rand(0, 100);
             $secondValueForExpression = rand(0, 100);
-	    $choiceExpression = [
+            $choiceExpression = [
                 "{$firstValueForExpression} * {$secondValueForExpression}",
-		"{$firstValueForExpression} + {$secondValueForExpression}",
+                "{$firstValueForExpression} + {$secondValueForExpression}",
                 "{$firstValueForExpression} - {$secondValueForExpression}"];
             $randomKey = array_rand($choiceExpression, 1);
             return $choiceExpression[$randomKey];
