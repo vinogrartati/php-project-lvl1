@@ -11,13 +11,13 @@ function gcd()
     return game(
         'Find the greatest common divisor of given numbers.',
         function () {
-            $value1 = rand(0, 100);
-            $value2 = rand(0, 100);
-            return "$value1 $value2";
+            $firstNumberForGCD = rand(0, 100);
+            $secondNumberForGCD = rand(0, 100);
+            return "$firstNumberForGCD $secondNumberForGCD";
         },
         function ($question) {
-            $questionValues = explode(" ", $question);
-            return gmp_gcd($questionValues[0], $questionValues[1]);
+            $questionValue = explode(" ", $question);
+            return gmp_gcd($questionValue[0], $questionValue[1]);
         }
     );
 }

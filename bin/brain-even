@@ -10,4 +10,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 use BrainGames\BaseForGames\game;
-BrainGames\Games\YesNoGame\yesOrNo();
+BrainGames\Games\EvenNumbersGame\evenNumbers();

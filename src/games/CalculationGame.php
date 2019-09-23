@@ -12,20 +12,23 @@ function calculate()
     return game(
         'What is the result of the expression?',
         function () {
-            $value1 = rand(0, 100);
-            $value2 = rand(0, 100);
-            $choiceExpression = ["{$value1} * {$value2}", "{$value1} + {$value2}", "{$value1} - {$value2}"];
+            $firstValueForExpression = rand(0, 100);
+            $secondValueForExpression = rand(0, 100);
+	    $choiceExpression = [
+                "{$firstValueForExpression} * {$secondValueForExpression}",
+		"{$firstValueForExpression} + {$secondValueForExpression}",
+                "{$firstValueForExpression} - {$secondValueForExpression}"];
             $randomKey = array_rand($choiceExpression, 1);
             return $choiceExpression[$randomKey];
         },
         function ($question) {
-            $questionValues = explode(" ", $question);
+            $questionValue = explode(" ", $question);
             if ($questionValues[1] == "*") {
-                return $questionValues[0] * $questionValues[2];
-            } elseif ($questionValues[1] == "+") {
-                return $questionValues[0] + $questionValues[2];
+                return $questionValue[0] * $questionValue[2];
+            } elseif ($questionValue[1] == "+") {
+                return $questionValue[0] + $questionValue[2];
             } else {
-                return $questionValues[0] - $questionValues[2];
+                return $questionValue[0] - $questionValue[2];
             }
         }
     );

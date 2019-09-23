@@ -1,5 +1,7 @@
 {
     "name": "vinogradova/php-project-lvl1",
+    "type": "library",
+    "keywords": ["php", "package", "games"],
     "description": "First php project - Brain games",
     "authors": [
         {
@@ -20,7 +22,7 @@
     "autoload" : {
     	"files": [
 		"src/BaseForGames.php",
-		"src/games/YesNoGame.php",
+		"src/games/EvenNumbersGame.php",
 		"src/games/CalculationGame.php",
 		"src/games/GreatestCommonDivisor.php",
 		"src/games/ProgressionGame.php",
