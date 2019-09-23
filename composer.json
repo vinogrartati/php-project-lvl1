@@ -9,16 +9,18 @@
     ],
     "bin": [
    	"bin/brain-even",
-	"bin/brain-calc"
+	"bin/brain-calc",
+	"bin/brain-gcd"
     ],
     "scripts": {
     	"phpcs": "phpcs"
     },
     "autoload" : {
     	"files": [
+		"src/BaseForGames.php",
 		"src/games/YesNoGame.php",
 		"src/games/CalculationGame.php",
-		"src/BaseForGames.php"
+		"src/games/GreatestCommonDivisor.php"
 	],
 	"psr-4": {
 		"BrainGames\\": "src"
