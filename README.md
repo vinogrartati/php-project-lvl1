@@ -3,4 +3,4 @@
 
 [![asciicast](https://asciinema.org/a/269769.png)](https://asciinema.org/a/269769)
 
-[![asciicast](https://asciinema.org/a/270392.png)](https://asciinema.org/a/270392)
+[![asciicast](https://asciinema.org/a/270394.png)](https://asciinema.org/a/270394)
