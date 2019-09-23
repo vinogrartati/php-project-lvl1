@@ -14,3 +14,6 @@ brain-progression
 
 brain-prime
 [![asciicast](https://asciinema.org/a/270464.png)](https://asciinema.org/a/270464)
+
+Unsuccessful results for all games
+[![asciicast](https://asciinema.org/a/270570.png)](https://asciinema.org/a/270570)
