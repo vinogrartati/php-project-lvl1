@@ -1,6 +1,6 @@
 {
     "name": "vinogradova/php-project-lvl1",
-    "type": "library",
+    "type": "project",
     "keywords": ["php", "package", "games"],
     "description": "First php project - Brain games",
     "authors": [
@@ -22,15 +22,12 @@
     "autoload" : {
     	"files": [
 		"src/BaseForGames.php",
-		"src/games/EvenNumbersGame.php",
-		"src/games/CalculationGame.php",
+		"src/games/EvenNumbers.php",
+		"src/games/Calculation.php",
 		"src/games/GreatestCommonDivisor.php",
-		"src/games/ProgressionGame.php",
-		"src/games/PrimeNumbersGame.php"
-	],
-	"psr-4": {
-		"BrainGames\\": "src"
-	}
+		"src/games/Progression.php",
+		"src/games/PrimeNumbers.php"
+	]
     },
      "require": {
         "wp-cli/php-cli-tools": "^0.11.11"

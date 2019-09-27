@@ -9,5 +9,5 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
-use BrainGames\BaseForGames\game;
-BrainGames\Games\EvenNumbersGame\evenNumbers();
+
+BrainGames\Games\EvenNumbers\evenNumbers();
