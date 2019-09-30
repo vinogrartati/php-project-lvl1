@@ -4,12 +4,12 @@ namespace BrainGames\Games\Progression;
 
 use function BrainGames\BaseForGames\createGame;
 
-const RULES_OF_THE_GAME = "What number is missing in the progression?";
+define('RULES_OF_THE_PROGRESSION_GAME', "What number is missing in the progression?");
 
 function progression()
 {
     return createGame(
-        RULES_OF_THE_GAME,
+        RULES_OF_THE_PROGRESSION_GAME,
         function () {
             $valuesForRound = [];
             $firstValueOfProgression = rand(0, 100);

@@ -4,7 +4,7 @@ namespace BrainGames\Games\PrimeNumbers;
 
 use function BrainGames\BaseForGames\createGame;
 
-const RULES_OF_THE_GAME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+define('RULES_OF_PRIME_GAME', 'Answer "yes" if given number is prime. Otherwise answer "no".');
 
 function isDivisionWithoutRemainder($dividend, $divider)
 {
@@ -14,7 +14,7 @@ function isDivisionWithoutRemainder($dividend, $divider)
 function primeNumbers()
 {
     return createGame(
-        RULES_OF_THE_GAME,
+        RULES_OF_PRIME_GAME,
         function () {
             $valuesForRound = [];
             $question =  rand(0, 100);

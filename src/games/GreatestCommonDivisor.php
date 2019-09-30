@@ -4,7 +4,7 @@ namespace BrainGames\Games\GreatestCommonDivisor;
 
 use function BrainGames\BaseForGames\createGame;
 
-const RULES_OF_THE_GAME = "Find the greatest common divisor of given numbers.";
+define('RULES_OF_GCD_GAME', 'Find the greatest common divisor of given numbers.');
 
 function isCommonDivisor($firstDividend, $secondDividend, $divisor)
 {
@@ -25,7 +25,7 @@ function gcd($firstValueForGCD, $secondValueForGCD)
 function findGCD()
 {
     return createGame(
-        RULES_OF_THE_GAME,
+        RULES_OF_GCD_GAME,
         function () {
             $valuesForRound = [];
             $firstValueForGCD = rand(1, 100);

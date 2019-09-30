@@ -4,12 +4,12 @@ namespace BrainGames\Games\Calculation;
 
 use function BrainGames\BaseForGames\createGame;
 
-const RULES_OF_THE_GAME = 'What is the result of the expression?';
+define('RULES_OF_THE_CALCULATION_GAME', 'What is the result of the expression?');
 
 function calculate()
 {
     return createGame(
-        RULES_OF_THE_GAME,
+        RULES_OF_THE_CALCULATION_GAME,
         function () {
             $valuesForRound = [];
             $firstValueForExpression = rand(0, 100);

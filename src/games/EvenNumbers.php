@@ -4,7 +4,7 @@ namespace BrainGames\Games\EvenNumbers;
 
 use function BrainGames\BaseForGames\createGame;
 
-const RULES_OF_THE_GAME = 'Answer "yes" if number even otherwise answer "no"';
+define('RULES_OF_EVEN_GAME', 'Answer "yes" if number even otherwise answer "no"');
 
 function isEven($value)
 {
@@ -14,7 +14,7 @@ function isEven($value)
 function evenNumbers()
 {
     return createGame(
-        RULES_OF_THE_GAME,
+        RULES_OF_EVEN_GAME,
         function () {
             $valuesForRound = [];
             $question = rand(0, 100);

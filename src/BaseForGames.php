@@ -5,11 +5,11 @@ namespace BrainGames\BaseForGames;
 use function cli\line;
 use function cli\prompt;
 
-function createGame($instruction, $valuesForRound)
+function createGame($rulesOfTheGame, $valuesForRound)
 {
     $question = [];
     line('Welcome to the Brain Game!');
-    line('%s', $instruction);
+    line('%s', $rulesOfTheGame);
     line('');
     $playerName = prompt('May I have your name?');
     line("Hello, %s!", $playerName);
