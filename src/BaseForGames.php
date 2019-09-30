@@ -2,10 +2,10 @@
 
 namespace BrainGames\BaseForGames;
 
-use function \cli\line;
-use function \cli\prompt;
+use function cli\line;
+use function cli\prompt;
 
-function createGame($instruction, $questionAnswer)
+function createGame($instruction, $valuesForRound)
 {
     $question = [];
     line('Welcome to the Brain Game!');
@@ -16,20 +16,20 @@ function createGame($instruction, $questionAnswer)
     line('');
     $rounds = 3;
     for ($i = 0; $i < $rounds; $i++) {
-	    $result = $questionAnswer();
-	    $question[$i] = key($result);
-            $correctAnswer = $result[$question[$i]];
-            line('Question:%s', $question[$i]);
-            $playerAnswer = prompt('Your answer');
+        $questionAnswer = $valuesForRound();
+        $question[$i] = key($questionAnswer);
+        $correctAnswer = $questionAnswer[$question[$i]];
+        line('Question:%s', $question[$i]);
+        $playerAnswer = prompt('Your answer');
         if ($correctAnswer == $playerAnswer) {
-                line('Correct!');
+            line('Correct!');
             if ($i == 2) {
-                    line('Congratulations, %s!', $playerName);
+                line('Congratulations, %s!', $playerName);
             }
         } else {
-                line('\'%s\' is wrong answer ;(. Correct answer was \'%s\'', $playerAnswer, $correctAnswer);
-                line('Let\'s try again, %s!', $playerName);
-                break;
+              line('\'%s\' is wrong answer ;(. Correct answer was \'%s\'', $playerAnswer, $correctAnswer);
+              line('Let\'s try again, %s!', $playerName);
+              break;
         }
     }
 }
