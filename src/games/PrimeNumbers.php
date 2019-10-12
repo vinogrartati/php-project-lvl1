@@ -4,32 +4,36 @@ namespace BrainGames\Games\PrimeNumbers;
 
 use function BrainGames\BaseForGames\createGame;
 
-define('RULES_OF_PRIME_GAME', 'Answer "yes" if given number is prime. Otherwise answer "no".');
+// phpcs:ignore
+const PRIME_GAME_TASK = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function isDivisionWithoutRemainder($dividend, $divider)
 {
     return $dividend % $divider == 0;
 }
 
-function primeNumbers()
+function isPrime($value)
+{
+    if ($value < 2) {
+        return false;
+    }
+    for ($i = $value - 1; $i > 1; $i--) {
+        if ($value % $i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
+function makePrimeGame()
 {
     return createGame(
-        RULES_OF_PRIME_GAME,
+        PRIME_GAME_TASK,
         function () {
-            $valuesForRound = [];
             $question =  rand(0, 100);
-            if ($question < 2) {
-                $valuesForRound[$question] = "no";
-                return $valuesForRound;
-            }
-            for ($i = $question - 1; $i > 1; $i--) {
-                if (isDivisionWithoutRemainder($question, $i)) {
-                    $valuesForRound[$question] = "no";
-                    return $valuesForRound;
-                }
-            }
-            $valuesForRound[$question] = "yes";
-            return $valuesForRound;
+            isPrime($question) ? $answer = "yes" : $answer = "no";
+            return [$question, $answer];
         }
     );
 }

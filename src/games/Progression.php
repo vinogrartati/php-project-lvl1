@@ -4,26 +4,26 @@ namespace BrainGames\Games\Progression;
 
 use function BrainGames\BaseForGames\createGame;
 
-define('RULES_OF_THE_PROGRESSION_GAME', "What number is missing in the progression?");
+// phpcs:ignore
+const PROGRESSION_GAME_TASK = "What number is missing in the progression?";
 
-function progression()
+function makeProgressionGame()
 {
     return createGame(
-        RULES_OF_THE_PROGRESSION_GAME,
+        PROGRESSION_GAME_TASK,
         function () {
-            $valuesForRound = [];
             $firstValueOfProgression = rand(0, 100);
             $differenceStep = rand(1, 10);
+            $valuesCount = 10;
             $progression = [];
-            for ($i = 0; $i < 10; $i++) {
+            for ($i = 0; $i < $valuesCount; $i++) {
                 $progression[] = $firstValueOfProgression + $differenceStep * $i;
             }
-            $randomKey = array_rand($progression, 1);
-            $answer = $progression[$randomKey];
-            $progression[$randomKey] = "..";
+            $hiddenElementKey = array_rand($progression, 1);
+            $answer = $progression[$hiddenElementKey];
+            $progression[$hiddenElementKey] = "..";
             $question = implode(" ", $progression);
-            $valuesForRound[$question] = $answer;
-            return $valuesForRound;
+            return [$question, $answer];
         }
     );
 }

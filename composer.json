@@ -10,26 +10,26 @@
         }
     ],
     "bin": [
-   	"bin/brain-even",
-	"bin/brain-calc",
-	"bin/brain-gcd",
-	"bin/brain-progression",
-	"bin/brain-prime"
+        "bin/brain-even",
+        "bin/brain-calc",
+        "bin/brain-gcd",
+        "bin/brain-progression",
+        "bin/brain-prime"
     ],
     "scripts": {
-    	"phpcs": "phpcs"
+        "phpcs": "phpcs"
     },
     "autoload" : {
-    	"files": [
-		"src/BaseForGames.php",
-		"src/games/EvenNumbers.php",
-		"src/games/Calculation.php",
-		"src/games/GreatestCommonDivisor.php",
-		"src/games/Progression.php",
-		"src/games/PrimeNumbers.php"
-	]
+        "files": [
+            "src/BaseForGames.php",
+            "src/games/EvenNumbers.php",
+            "src/games/Calculation.php",
+            "src/games/gcd.php",
+            "src/games/Progression.php",
+            "src/games/PrimeNumbers.php"
+        ]
     },
-     "require": {
+    "require": {
         "wp-cli/php-cli-tools": "^0.11.11"
     },
     "require-dev": {

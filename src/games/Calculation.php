@@ -4,32 +4,36 @@ namespace BrainGames\Games\Calculation;
 
 use function BrainGames\BaseForGames\createGame;
 
-define('RULES_OF_THE_CALCULATION_GAME', 'What is the result of the expression?');
+// phpcs:ignore
+const CALCULATION_GAME_TASK = 'What is the result of the expression?';
 
-function calculate()
+function createExpression()
+{
+    $expression = ["*", "+", "-"];
+    return $expression[array_rand($expression, 1)];
+}
+
+function makeCalculationGame()
 {
     return createGame(
-        RULES_OF_THE_CALCULATION_GAME,
+        CALCULATION_GAME_TASK,
         function () {
-            $valuesForRound = [];
-            $firstValueForExpression = rand(0, 100);
-            $secondValueForExpression = rand(0, 100);
-            $expression = ["*", "+", "-"];
-            $randomExpression = $expression[array_rand($expression, 1)];
-            $question = "{$firstValueForExpression} {$randomExpression} {$secondValueForExpression}";
-            switch ($randomExpression) {
+            $a = rand(0, 100);
+            $b = rand(0, 100);
+            $expression = createExpression();
+            $question = "$a $expression $b";
+            switch ($expression) {
                 case "*":
-                    $answer = $firstValueForExpression * $secondValueForExpression;
+                    $answer = $a * $b;
                     break;
                 case "+":
-                    $answer = $firstValueForExpression + $secondValueForExpression;
+                    $answer = $a + $b;
                     break;
                 case "-":
-                    $answer = $firstValueForExpression - $secondValueForExpression;
+                    $answer = $a - $b;
                     break;
             }
-            $valuesForRound[$question] = $answer;
-            return $valuesForRound;
+            return [$question, $answer];
         }
     );
 }
