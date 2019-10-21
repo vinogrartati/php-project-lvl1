@@ -6,12 +6,8 @@ use function BrainGames\BaseForGames\createGame;
 
 // phpcs:ignore
 const CALCULATION_GAME_TASK = 'What is the result of the expression?';
-
-function createExpression()
-{
-    $expression = ["*", "+", "-"];
-    return $expression[array_rand($expression, 1)];
-}
+// phpcs:ignore
+const EXPRESSIONS = ["-", "+", "*"];
 
 function makeCalculationGame()
 {
@@ -20,7 +16,8 @@ function makeCalculationGame()
         function () {
             $a = rand(0, 100);
             $b = rand(0, 100);
-            $expression = createExpression();
+            $expressions = EXPRESSIONS;
+            $expression = $expressions[array_rand($expressions, 1)];
             $question = "$a $expression $b";
             switch ($expression) {
                 case "*":

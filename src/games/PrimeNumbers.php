@@ -7,11 +7,6 @@ use function BrainGames\BaseForGames\createGame;
 // phpcs:ignore
 const PRIME_GAME_TASK = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function isDivisionWithoutRemainder($dividend, $divider)
-{
-    return $dividend % $divider == 0;
-}
-
 function isPrime($value)
 {
     if ($value < 2) {

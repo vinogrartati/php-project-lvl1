@@ -5,6 +5,9 @@ namespace BrainGames\BaseForGames;
 use function cli\line;
 use function cli\prompt;
 
+// phpcs:ignore
+const ROUNDS_COUNT = 3;
+
 function createGame($gameTask, $questionAnswer)
 {
     $question = [];
@@ -14,19 +17,18 @@ function createGame($gameTask, $questionAnswer)
     $playerName = prompt('May I have your name?');
     line("Hello, %s!", $playerName);
     line('');
-    $roundsCount = 3;
-    for ($i = 0; $i < $roundsCount; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $valuesForRound = $questionAnswer();
-        $question = $valuesForRound[0];
-        $correctAnswer = $valuesForRound[1];
+        [$question, $correctAnswer] = $valuesForRound;
         line('Question:%s', $question);
         $playerAnswer = prompt('Your answer');
         if ($correctAnswer == $playerAnswer) {
             line('Correct!');
         } else {
               line('\'%s\' is wrong answer ;(. Correct answer was \'%s\'', $playerAnswer, $correctAnswer);
-              return line('Let\'s try again, %s!', $playerName);
+              line('Let\'s try again, %s!', $playerName);
+              return false;
         }
     }
-    return line('Congratulations, %s!', $playerName);
+    line('Congratulations, %s!', $playerName);
 }
