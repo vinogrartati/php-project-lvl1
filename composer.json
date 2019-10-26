@@ -24,7 +24,7 @@
             "src/BaseForGames.php",
             "src/games/EvenNumbers.php",
             "src/games/Calculation.php",
-            "src/games/gcd.php",
+            "src/games/Gcd.php",
             "src/games/Progression.php",
             "src/games/PrimeNumbers.php"
         ]
